@@ -14,6 +14,10 @@ module.exports = defineConfig({
   testDir: './tests',
   // Maximum time one test can run for.
   timeout: 30 * 1000,
+  //Maximum time to wait for any expect(assertion)
+  expect: {
+    timeout: 5000
+  },
   /* Run tests in files in parallel */
   fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -31,7 +35,7 @@ module.exports = defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     browserName: 'chromium',
-    trace: 'on-first-retry',
+    headless: false
   },
 
   /* Configure projects for major browsers */
